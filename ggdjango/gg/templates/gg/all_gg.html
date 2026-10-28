@@ -1,9 +1,21 @@
 {% extends "layout.html" %}
 
 {% block title %}
-GG Page
+GGmomo Page
 {% endblock %}
 
 {% block content %}
-<h1>All GG mode</h1>
+<h1>All GGmomo for you</h1>
+
+{% comment %} uta main project template ma euta matra content/block load grya xau so outside thahahunna so 
+aba block bhitra block injects grna milxa so yei bitra grne not outside {% endcomment %}
+{% for momo in momos %}
+    <div class="ggmomo" >
+        <h2>{{ momo.name }}</h2>
+        {% comment %} <p>{{ momo.type }}</p> {% endcomment %}
+        <img src="{{ momo.image.url }}" alt="{{ momo.name }}">
+    </div>
+{% endfor %}
+
 {% endblock %}
+
