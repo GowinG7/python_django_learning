@@ -1,0 +1,11 @@
+html,body{
+    min-height: 100vh;
+}
+body{
+    background-color: seagreen;
+    color: whitesmoke;
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+}
