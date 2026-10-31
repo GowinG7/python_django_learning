@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block title %} GGmomo Detail Page {% endblock %}
+{% block content %}
+<h1>Mo:Mo detail page</h1>
+<div class="grid grid-cols-3 gap-4 m-4">
+  <div class="col-span-1 bg-blue-400 p-5 rounded">
+    <img
+      class="rounded shadow-lg"
+      src="{{ momo.image.url }}"
+      alt="{{ momo.name }}"
+    />
+    <h3>{{momo.name}}</h3>
+    <h2>Short form:{{momo.type}}</h2>
+    <h3>Price: ${{momo.price}}</h3>
+    <h3>{{momo.description}}</h3>
+  </div>
+</div>
+{% endblock %}

@@ -7,15 +7,26 @@ GGmomo Page
 {% block content %}
 <h1>All GGmomo for you</h1>
 
+<div class="grid grid-cols-3 gap-4 m-4">
+
 {% comment %} uta main project template ma euta matra content/block load grya xau so outside thahahunna so 
 aba block bhitra block injects grna milxa so yei bitra grne not outside {% endcomment %}
 {% for momo in momos %}
-    <div class="ggmomo" >
-        <h2>{{ momo.name }}</h2>
+    <div class="bg-blue-500 p-5 rounded" >
         {% comment %} <p>{{ momo.type }}</p> {% endcomment %}
-        <img src="{{ momo.image.url }}" alt="{{ momo.name }}">
+        <img class="rounded shadow-lg " src="{{ momo.image.url }}" alt="{{ momo.name }}">
+        <h2>{{ momo.name }}</h2>
+        <h2>Short form:{{momo.type}}</h2>
+        <h3>Price: ${{momo.price}}</h3>
+
+        <a href="{% url 'gg_detail' momo.id %}">
+            <button type="button" class="inline-flex w-[100%] items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" >
+                {{momo.type}} - {{momo.id}}
+            </button>
+        </a>
     </div>
 {% endfor %}
+</div>
 
 {% endblock %}
 

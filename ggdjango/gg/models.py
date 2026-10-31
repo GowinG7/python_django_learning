@@ -18,6 +18,9 @@ class GGmomo(models.Model):
     date_added = models.DateTimeField(default=timezone.now) 
     #TO make only available ggmomo type choice 
     type = models.CharField(max_length=2, choices=GGmomo_TYPE_CHOICE)
+    description = models.TextField(default='')
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+
 
     def __str__(self):
         return self.name
