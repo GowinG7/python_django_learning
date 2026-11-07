@@ -13,7 +13,7 @@ class GGmomoAdmin(admin.ModelAdmin):
     
 class StoreAdmin(admin.ModelAdmin):
     list_display = ('name', 'location')
-    filter_horizontal = ('momo_varieties',)
+    filter_horizontal = ('momo_varieties', )
     
 class momoCertificateAdmin(admin.ModelAdmin):
     list_display = ('momo', 'certificate_number')
